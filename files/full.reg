@@ -1,0 +1,147 @@
+Windows Registry Editor Version 5.00
+
+; Add Command Prompt to Context Menu
+[HKEY_CURRENT_ROOT\Directory\shell\cmd\]
+"HideBasedOnVelocityId"=-
+"_HideBasedOnVelocityId"=dword:639bc8
+
+; Revert to Windows 10 style start menu
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\]
+"Start_ShowClassicMode"=dword:1
+; This only works on Windows 11,
+; and taskbar alignment has to be
+; set to left instead of the default
+; center position
+; To set it back to the normal taskbar,
+; set Taskbar Alignment to center or,
+; change Start_ShowClassicMode to 0
+; or, just delete it entirely
+; After running it, restart.
+
+; Increase network speeds
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\LanmanServer\Parameters]
+"IRPStackSize"=dword:32
+"SizReqBuf"=dword:17424
+; after this one, you need to reastart to apply changes.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"DefaultTTL"=dword:62
+"TCP1323Opts"=dword:1
+"MaxFreeTcbs"=dword:65536
+"MaxUserPort"=dword:65534
+"GlobalMaxTcpWindowSize"=dword:65535
+"MTU"=dword:88
+; after this one, restart as well.
+
+; Disable Windows Lockscreen
+[HKEY_LOCAL_MACHINE_\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"NoLockScreen"=dword:1
+
+; Show detailed information on startup
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:1
+
+; Open last active window in taskbar
+[HKEY_CURRENT_USER\Software\Microsoft\CurrentVersion\Explorer\Advanced\]
+"LastActiveClick"=dword:1
+
+; Disable shake to minimize
+[HKEY_LOCAL_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\]
+"DissallowShaking"=dword:1
+
+; Add Windows Update to the context list
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Check For Updates]
+"SettingsURI"="ms-settings:windowsupdate-action"
+
+; Change apps and settings to dark mode
+[HKEY_CURRENT_ROOT\Software\Microsoft\Windows\Themes\Personalize]
+"AppsUseLightTheme"=dword:0
+
+; Remove Windows Action Center sidebar
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableNotificationCenter"=dword:1
+
+; Remove OneDrive button from explorer
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}]
+"System.IsPinnedToNameSpaceTree"=dword:0
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\018D5C66-4533-4307-9B53-224DE2ED1FE6}]
+
+; Delete Pagefile.sys at shutdown
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"ClearPageFileAtShutdown"=dword:1
+
+; Adjust menu animations
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="200"
+
+; Disable Windows startup delay
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:0
+
+; Remove Bing from start menu search
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:1
+; after running, restart for the changes to take effect.
+
+; Display seconds on taskbar clock
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\]
+"ShowSecondsInSystemClock"=dword:1
+
+; Remove 3D Objects from This PC(!!! it won't delete the folder !!!)
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsft\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
+
+; Remove Cortana entirely
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Serach]
+"AllowCortana"=dword:0
+
+; Prevent Windows update from rebooting the computer
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoRebootWithLoggedOnUsers"=dword:1
+
+; Stop Windows from hijacking the power controls during updates
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAUAsDefaultShutdownOption"=dword:1
+
+; Add "Open with Notepad" in the context menu for all files
+[HKEY_CLASSES_ROOT\*\shell\Open with Notepad\command]
+@="notepad.exe %1"
+
+; Kill Windows with bluescreen in 3 keystrokes
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlset\Services\kbdhid\Parameters]
+"CrashOnCtrlScroll"=dword:1
+
+; Disable Win+X
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoWinKeys"=dword:1
+; requires logoff after execution
+
+; disable Aero Peek
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DesktopLivePreviewHoverTime"=dword:0
+
+; remove Troubleshoot Compatibility from context menu
+[HKEY_CLASSES_ROOT\exefile\shellex\ContextMenuHandlers\Compatibility]
+@="-{1d27f844-3a1f-4410-85ac-14651078412d}"
+[HKEY_CLASSES_ROOT\lnkfile\shellex\ContextMenuHandlers\Compatibility]
+@="-{1d27f844-3a1f-4410-85ac-14651078412d}"
+
+; Add recycle bin to This PC
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{645FF040-5081-101B-9F08-00AA002F954E}]
+
+; Disable Location Services
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+"Value"="Deny"
+
+; Disable Webcam & Microphone access
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
+;"Value"="Deny"
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone]
+;"Value"="Deny"
+
+; Disable Sync Info with wireless devices
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\LooselyCoupled]
+"Value"="Deny"
+
+; Disable Improve Typing
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Input\TIPC]
+"Value"="Deny"
