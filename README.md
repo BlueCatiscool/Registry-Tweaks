@@ -1,8 +1,8 @@
-### Registry Tweaks
+# Registry Tweaks
 
 Simple, registry tweaks made possible through .reg files.
 
-# Features
+### Features
 - Add Command Prompt to Context Menu
 - Revert to Windows 10 style start menu (Windows 11 only)
 - Increase network speeds
