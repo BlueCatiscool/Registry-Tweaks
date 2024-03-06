@@ -30,5 +30,5 @@ Simple, registry tweaks made possible through .reg files.
 - Remove Troubleshoot Compatibility from context menu
 - Add recycle bin to This PC
 - Disable Location Services
-- Disable Webcam & Microphone access (not enable by default)
+- Disable Webcam & Microphone access (not enabled by default)
 - Disable Sync Info with wireless devices
