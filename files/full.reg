@@ -145,3 +145,86 @@ Windows Registry Editor Version 5.00
 ; Disable Improve Typing
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Input\TIPC]
 "Value"="Deny"
+
+; Disable Thumbnail Cache
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisableThumbnailCache"=dword:1
+
+; Speed up taskbar thumbnails
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ExtendedUIHoverTime"=dword:0
+
+; Disable Telemetry
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:0
+
+; Speed up shutdown
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"HungAppTimeout"="1000"
+"WaitToKillAppTimeout"="1000"
+[HKEY_LOCAL_MACHINE\SYSTEM\ CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="1000"
+
+; Force Windows to close non-responding apps
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoEndTasks"=dword:1
+
+; Restore old volume control
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC]
+"EnableMTCUVC"=dword:0
+
+; Restore old clock and calendar
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell]
+"UseWin32TrayClockExperience"=dword:1
+
+; Remove arrows from shortcuts
+[HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons]
+"29"="C:\Windows\System32\shell32.dll,50"
+
+; Force Disk Cleanup to delete newer files
+[HKEY_LOCAL_MACHINE\ SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Temporary Files]
+"LastAccess"=dword:0
+
+; Remove low disk space alerts
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:1
+
+; Disable annoying ads
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSyncProviderNotification"=dword:0
+
+; Paint Windows version to Desktop
+[HKEY_CURRENT_USER\Control Panel\Desktop\PaintDesktopVersion]
+"PaintDesktopVersion"=dword:1
+
+; Disable Automatic driver updates
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ExcludeWUDriversInQualityUpdate"=dword:1
+
+; Hide the Hi greeting
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableFirstLogonAnimation"=dword:0
+
+; Disable app launch tracking
+[HKEY_LOCAL_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\]
+"Start_TrackProgs"=dword:0
+
+; Increase taskbar transparency
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsft\CurrentVersion\Explorer\MyComputer\NameSpace\]
+"UseOLEDTaskbarTransparency"=dword:1
+
+; Restore old battery flyout UI
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
+"UseWin32BatteryFlyout"=dword:1
+
+; Activate experimental login screen
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\TestHooks]
+"Threshold"="1"
+
+; Disable the Xaml start menu
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableXamlStartMenu"=dword:0
+
+; Restore old Windows Update UI
+[HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsUpdate\UX]
+"IsConvergedUpdateStackEnabled"=dword:0
