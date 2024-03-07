@@ -32,3 +32,24 @@ Simple, registry tweaks made possible through .reg files.
 - Disable Location Services
 - Disable Webcam & Microphone access (not enabled by default)
 - Disable Sync Info with wireless devices
+- Disable Improve Typing
+- Disable Thumbnail Cache
+- Speed up taskbar thumbnails
+- Disable Telemetry
+- Speed up shutdown
+- Force Windows to close non-responding apps
+- Restore old volume control
+- Restore old clock and calendar
+- Remove arrows from shortcuts
+- Force Disk Cleanup to delete newer files
+- Remove low disk space alerts
+- Disable annoying ads
+- Paint Windows version to Desktop
+- Disable Automatic driver updates
+- Hide the Hi greeting
+- Disable app launch tracking
+- Increase taskbar transparency
+- Restore old battery flyout UI
+- Activate experimental login screen
+- Disable the Xaml start menu
+- Restore old Windows Update UI
