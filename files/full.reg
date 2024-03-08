@@ -228,3 +228,92 @@ Windows Registry Editor Version 5.00
 ; Restore old Windows Update UI
 [HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsUpdate\UX]
 "IsConvergedUpdateStackEnabled"=dword:0
+
+; Force run Mixed Reality
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Holographic]
+"AllowFailedSystemChecks"=dword:1
+
+; Bring back old context menu in Windows 11
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InProcServer32]
+@=""
+
+; Allow to update Windows 10 to 11 without any TPU or CPU checks
+[Computer\HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
+"AllowUpgradesWithUnsupportedTMPorCPU"=dword:1
+; reboot required
+
+; Stop automatic updates
+[Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:1
+
+; Enable Windows Photo Viewer
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.bmp]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.gif]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.ico]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.jpeg]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.jpg]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\.png]
+@="PhotoViewer.FileAssoc.Tiff"
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.gif\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.ico\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.jpeg\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.bmp\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.jpg\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.png\OpenWithProgids]
+"PhotoViewer.FileAssoc.Tiff"=hex(0):
+
+; Remove 'System requirements not met' watermark
+[HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
+"SV1"=dword:0
+"SV2"=dword:0
+
+; Disable Search Highlights
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings]
+"IsDynamicSeachBoxEnabled"=dword:0
+
+; Disable Windows Defender
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Defender]
+;"DisableAntiSpiware"=dword:1
+; A restart is required.
+
+; Disable Snap Layout
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableSnapAssistFlyout"=dword:0
+
+; Get Windows 10 explorer in 11
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{e2bf9676-5f8f-435c-97eb-11607a5bedf7}"=""
+; A restart of explorer is required
+
+; Enable Num Lock on startup
+[HKEY_USERS\.Default\Control Panel\Keyboard]
+"InitialKeyboardIndicators"="2"
+
+; Disable Confirm File delete dialog
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ConfirmFileDelete"=dword:0
+; If you want it back, set it back to 1
+
+; Add "Take Ownership" to the context menu
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
