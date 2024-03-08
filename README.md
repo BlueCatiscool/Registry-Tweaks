@@ -53,3 +53,16 @@ Simple, registry tweaks made possible through .reg files.
 - Activate experimental login screen
 - Disable the Xaml start menu
 - Restore old Windows Update UI
+- Force run Mixed Reality
+- Bring back old context menu (Windows 11 only)
+- Allow to update Windows 10 to 11 without any TPU or CPU checks
+- Stop automatic updates
+- Enable Windows Photo Viewer
+- Remove 'System requirements not met' watermark
+- Disable Search Highlights
+- Disable Windows Defender (not enabled by default)
+- Disable Snap Layout
+- Get Windows 10 explorer in 11
+- Enable Num Lock on startup
+- Disable Confirm File delete dialog
+- Add "Take Ownership" to the context menu
